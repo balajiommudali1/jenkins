@@ -1,0 +1,20 @@
+node()
+{
+    git url: "https://github.com/balajiommudali1/maven-project.git"
+    
+    stage('build')
+    {
+        echo "Build stage"
+    }
+    stage('Test')
+    {
+        echo "Test stage"
+    }
+    stage('Deploy')
+    {
+        if (currentBuild.result == null || currentBuild.result == 'SUCCESS')
+        {
+            echo "Deploying"
+        }
+    }
+}
