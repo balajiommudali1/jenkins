@@ -1,0 +1,23 @@
+properties([parameters([string(defaultValue: "Balaji", description: "What is your Name?", name: "User")])])
+node()
+{
+   
+   echo "Running ${env.BUILD_ID} ${env.JENKINS_URL}"
+    def UserName = 'Balaji'
+    
+    stage('build')
+    {
+               echo "${params.User} Ommudali"
+    }
+    stage('Test')
+    {
+        echo "Test stage"
+    }
+    stage('Deploy')
+    {
+        if (currentBuild.result == null || currentBuild.result == 'SUCCESS')
+        {
+            echo "Deploying"
+        }
+    }
+}
