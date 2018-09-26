@@ -1,5 +1,5 @@
 node () {
-  stage 'Test'
-      sh echo "Hello"
+
+    println "Hello"
   
 }
